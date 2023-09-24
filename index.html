@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apstiprini mani CV</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            transition: background-color 0.5s, color 0.5s;
+        }
+
+        #text-container {
+            font-size: 34px;
+            font-weight: bold;
+            margin-top: 250px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="text-container">Klikšķini vai tapo vienalga kur, lai ietu cauri manam CV :)</div>
+
+    <script>
+        const textContainer = document.getElementById("text-container");
+        const texts = [
+            "Kā jau Tu zini mans vārds ir Tomass.",
+            "Esmu 32 gadus jauns.",
+            "Oriģināli nāku no laukiem, lepns par to.",
+            "Jaunību pavadīju tākā pienākas..",
+            "Kariņi upmalā, tantēm tirgojot labumus un cepot smilšu kūkas.",
+            "Šobrīd esmu mierīgs un sapratīgs.",
+            "PIEZEMĒTS.",
+            "Meklēju savu sievu, bet vēl līdz šim tas nav izdevies.",
+            "Tomass tāpat kā Tu meklē sev īpašu cilvēku.",
+            "Cilvēku kurš ir gatavs ieguldīties manī.",
+            "Cilvēku kurš ir mīļš.",
+            "Cilvēku ar kuru kur veidojas savstarpējā sintēze.",
+            "Cilvēku kuram aiztaisīt kleitai slēdzēju.",
+            "Cilvēku kuram taisīt rīta kafiju.",
+            "Cilvēku kuram dod rīta bučas.",
+            "Cilvēku kuram teikt, ka viņa par ilgi taisas.",
+            "Cilvēku kuram būšu stiprais plecs.",
+            "Man nav augstākā izglītība.",
+            "Bet tas nenozīmē, ka neesmu izglītots.",
+            "Nestrādāju super duper-labu darbu, bet..",
+            "MAN IR VĪZIJA.",
+            "Šī vīzija ir likusi man mainīt kursu savā dzīvē.",
+            "Tāpēc patreiz esmu uz karjeras maiņas.",
+            "Dienas pavadu strādājot būvniecībā.",
+            "Vakarus pavadu mācoties programmēšanu un darot vēl citas lietas.",
+            "Pēc iespējas nodarbojos ar sportu.",
+            "Nav kaitīgu ieradumu.",
+            "Protu un patīk gatavot.",
+            "No kultūras lietām spēju baudīt praktiski jebko.",
+            "Esmu ar bagātu iztēli.",
+            "Un pietam perfectionists.",
+            "Man patīk cilvēku nesavtīgums, iejūtība un spontānums.",
+            "Protu risināt problēmas un komunicēt.",
+            "Loti nepatīk strīdēties.",
+            "Esmu pieklājīgs",
+            "Patīk suņi un arī kaķi, gribētu sev kādreiz Lamu.",
+            "Mans sapņu ceļojums ir uz Madagaskaru.",
+            "Man nav bērnu.",
+            "Man ir viena māsa.",
+            "Esmu vēzis.",
+            "Garums: 1.85cm.",
+            "Svars: 75kg.",
+            "Acis ir zali-zilas.",
+            "Esmu mērķtiecīgs.",
+            "Tā ir viena no manām raksturīgākajām iezīmēm.",
+            "Meklēju to cilvēku kurš spēs ar mani šos mērķu veidot.",
+            "Tam ir vajadzīgs raksturs un pacietība.",
+            "Nebaidos no izaicinājumiem.",
+            "Mans dzīves moto ir: I don't like it easy",
+            "Ar to domāju, ka man patīk izaicinājumi",
+            "Protams, ka ikdienu un savstarpējo dzīvi ar otro cilvēku es vēlos 'as easy as possible'",
+            "Izrādas, ka šāda veida CV ir diezgan sarģīti izveidot.",
+            "Mazliet iesvīdu.",
+            "Bet sievas meklēšana noteikti nekad nav bijusi viegla.",
+            "Šādi nekas neesmu darījis, vari būt droša, ka šis ir pirmais šāds CV Pasaulē.",
+            "Es ceru, ka Tev patika, Alīna.",
+            "Šeit noteikti varētu turpināt rakstīt lietas par sevi, bet..",
+            "Es no sākuma gribēšu dzirdēt lietas par Tevi.",
+            "Tas tai sintēzei :p",
+            "Vieglāk runāt, ja ir informācija par otro cilvēku (:",
+            "Tāpēc..",
+            "Pataupīšu kautko arī citām reizēm.",
+            "Paldies par uzmanību."
+        ];
+
+        let currentIndex = 0;
+        let hasReachedEnd = false; // Track if we've reached the end of the array
+
+        // Color arrays
+        const backgroundColors = [
+            "#333333",
+            "#2F4F4F",
+            "#353839",
+            "#1A1A1A",
+            "#4D4D4D",
+            "#080808",
+            "#555555",
+            "#000080",
+            "#4B3832",
+            "#362D26",
+            "#8E8E8E",
+            "#2C3539",
+            "#555D50",
+            "#738276",
+            "#B2BEB5",
+            "#6D7B8D",
+            "#800000",
+            "#8B0000",
+            "#E2725B",
+            "#635147",
+            "#A0522D",
+            "#CD5700",
+            "#C19A6B",
+            "#F0DC82",
+            "#C3B091",
+            "#E5AA70",
+            "#D2B48C",
+            "#E5AA70",
+            "#D2B48C",
+            "#C2B280",
+            "#F5F5DC",
+            "#483C32",
+        ];
+        const textColors = ["#ffffff"];
+
+        // Function to change the text and colors
+        function changeText() {
+            if (hasReachedEnd) return; // Don't change text if we've reached the end
+
+            // Get random indexes for background and text colors
+            const bgColorIndex = Math.floor(Math.random() * backgroundColors.length);
+            const textColorIndex = Math.floor(Math.random() * textColors.length);
+
+            // Apply the random colors
+            document.body.style.backgroundColor = backgroundColors[bgColorIndex];
+            textContainer.style.color = textColors[textColorIndex];
+
+            // Change the text
+            textContainer.textContent = texts[currentIndex];
+
+            // Update the current index
+            currentIndex++;
+
+            // Check if we've reached the end
+            if (currentIndex >= texts.length) {
+                hasReachedEnd = true;
+            }
+        }
+
+        // Add a click or tap event listener
+        document.addEventListener("click", changeText);
+        document.addEventListener("touchstart", changeText);
+
+        // Initialize with the initial colors
+        changeText();
+    </script>
+</body>
+
+</html>
